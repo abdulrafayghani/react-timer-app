@@ -1,18 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Timer } from './Timer';
 
 describe('Timer', () => {
-    let container:any
-
-    beforeEach(() => (container = shallow(<Timer />)))
+    const container = mount(<Timer/>)
 
   it('should render a div', () => {
     expect(container.find('div').length).toBeGreaterThanOrEqual(1);
   });
 
   it('should render Timer Button', () => {
-    //   const container = shallow(<Timer/>)
+      const container = shallow(<Timer/>)
     expect(container.find('TimerButton').length).toEqual(3)
   });
+  
 });
+
+
+
